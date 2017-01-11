@@ -17,6 +17,8 @@
 @import "global/wp-admin"; // Fix issues with wp-admin bar positioning
 @import "global/wp-overrides"; // Override the default WordPress styling for some elements
 
+@import "global/page-element"; // Created by Jian SHI
+
 // Third-party libraries
 @import 'font-awesome';
 @import 'motion-ui';
@@ -94,3 +96,4 @@
 @import "templates/page-sidebar-left";
 @import "templates/page-full-width";
 @import "templates/single-post";
+

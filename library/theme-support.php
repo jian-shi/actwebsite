@@ -40,6 +40,15 @@ function foundationpress_theme_support() {
 
 	// Add foundation.css as editor style https://codex.wordpress.org/Editor_Style
 	add_editor_style( 'assets/stylesheets/foundation.css' );
+
+    // Add theme header
+    $args = array(
+        'width'         => 125,
+        'height'        => 75,
+        'default-image' => get_template_directory_uri() . '/images/header.jpg',
+        'uploads'       => true,
+    );
+    add_theme_support( 'custom-header', $args );
 }
 
 add_action( 'after_setup_theme', 'foundationpress_theme_support' );

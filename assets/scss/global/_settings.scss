@@ -39,30 +39,34 @@
 //  34. Title Bar
 //  35. Tooltip
 //  36. Top Bar
-
+//  37. Parallelogram
 @import '../../components/foundation-sites/scss/util/util';
 
 // 1. Global
 // ---------
 
-$global-font-size: 100%;
+$global-font-size: 90%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #2199e8,
-  secondary: #777,
+  primary: #063964,
+  secondary: #ffda37,
   success: #3adb76,
   warning: #ffae00,
   alert: #ec5840,
 );
+$dark-yellow: darken(#f9d81c, 5%);
+$light-yellow: lighten(#f9de2f, 35%);
+$light-blue: lighten(#063964, 35%);
+$dark-blue: darken(#00408b, 15%);
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
-$black: #0a0a0a;
+$black: #586475;
 $white: #fefefe;
 $body-background: $white;
-$body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-color: #586475;
+$body-font-family: 'MuseoSans_Thin', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -72,7 +76,6 @@ $global-radius: 0;
 $global-text-direction: ltr;
 $global-flexbox: false;
 $print-transparent-backgrounds: true;
-
 @include add-foundation-colors;
 
 // 2. Breakpoints
@@ -131,7 +134,7 @@ $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
 $header-small-font-color: $medium-gray;
 $paragraph-lineheight: 1.6;
-$paragraph-margin-bottom: 1rem;
+$paragraph-margin-bottom: 0.75rem;
 $paragraph-text-rendering: optimizeLegibility;
 $code-color: $black;
 $code-font-family: $font-family-monospace;
@@ -144,8 +147,8 @@ $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
-$hr-border: 1px solid $medium-gray;
-$hr-margin: rem-calc(20) auto;
+$hr-border: 2px solid rgba(255, 255, 255, 0);
+$hr-margin: rem-calc(10) auto;
 $list-lineheight: $paragraph-lineheight;
 $list-margin-bottom: $paragraph-margin-bottom;
 $list-style-type: disc;
@@ -234,7 +237,7 @@ $breadcrumbs-item-slash: true;
 // ----------
 
 $button-padding: 0.85em 1em;
-$button-margin: 0 0 $global-margin 0;
+$button-margin: 10px 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
@@ -361,7 +364,7 @@ $input-radius: $global-radius;
 // ---------
 
 $label-background: $primary-color;
-$label-color: foreground($label-background);
+$label-color: $dark-gray;
 $label-font-size: 0.8rem;
 $label-padding: 0.33333rem 0.5rem;
 $label-radius: $global-radius;
@@ -380,7 +383,7 @@ $menu-margin: 0;
 $menu-margin-nested: 1rem;
 $menu-item-padding: 0.7rem 1rem;
 $menu-item-color-active: $white;
-$menu-item-background-active: #121212;
+$menu-item-background-active: $secondary-color;
 $menu-icon-spacing: 0.25rem;
 
 // 23. Meter
@@ -525,12 +528,12 @@ $tab-content-padding: 1rem;
 // 33. Thumbnail
 // -------------
 
-$thumbnail-border: solid 4px $white;
+$thumbnail-border: solid 0px $white;
 $thumbnail-margin-bottom: $global-margin;
-$thumbnail-shadow: 0 0 0 1px rgba($black, 0.2);
-$thumbnail-shadow-hover: 0 0 6px 1px rgba($primary-color, 0.5);
-$thumbnail-transition: box-shadow 200ms ease-out;
-$thumbnail-radius: $global-radius;
+$thumbnail-shadow: 0;
+$thumbnail-shadow-hover: 0;
+$thumbnail-transition:0;
+$thumbnail-radius: 0;
 
 // 34. Title Bar
 // -------------
@@ -558,8 +561,21 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0;
-$topbar-background: #121212;
+$topbar-background: $secondary-color;
 $topbar-submenu-background: $topbar-background;
 $topbar-link-color: #fff;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
+
+// 37. Parallelogram
+
+
+
+@mixin parallelogram($radius: 20px) {
+  -webkit-transform: skew(-10deg);
+  -moz-transform: skew(-10deg);
+  -o-transform: skew(-10deg);
+  -moz-border-radius:    0px $radius 0px $radius;
+  -webkit-border-radius: 0px $radius 0px $radius;
+  border-radius:         0px $radius 0px $radius;
+}

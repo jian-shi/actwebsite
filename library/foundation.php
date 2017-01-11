@@ -5,6 +5,13 @@
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
+// Custom logo
+
+function theme_prefix_the_custom_logo() {
+    if ( function_exists( 'the_custom_logo' ) ) {
+        the_custom_logo();
+    }
+}
 
 // Pagination.
 if ( ! function_exists( 'foundationpress_pagination' ) ) :

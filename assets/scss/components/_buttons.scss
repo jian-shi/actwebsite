@@ -1,8 +1,16 @@
-.sites-button {
-  background: #FF6908;
-  font-size: 1.25rem;
+.button {
+//  @include parallelogram(10px);
+  background: $primary-color;
   font-weight: bold;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
-  border-radius: 3px;
   border: none;
+  margin-top: $button-margin;
+}
+
+.button-small {
+//  @include parallelogram(10px);
+  background: $primary-color;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  float: right;
 }
